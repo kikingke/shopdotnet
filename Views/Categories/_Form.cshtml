@@ -1,0 +1,13 @@
+﻿@model shopdotnet.Data.Entities.Category
+
+<div asp-validation-summary="ModelOnly" class="alert alert-danger alert-dismissible fade show"></div>
+
+<div class="form-group mt-4">
+    <label asp-for="Category_Name" class="control-label">Categoria:</label>
+    <input asp-for="Category_Name" class="form-control" />
+    <span asp-validation-for="Category_Name" class="text-danger"></span>
+</div>
+<div class="form-group mt-4 d-flex justify-content-between">
+    <a asp-action="Index" class="btn btn-outline-default"><i class="fa-solid fa-ban"></i> Cancelar</a>
+    <button type="submit" value="Save" class="btn btn-success"><i class="fa-regular fa-floppy-disk"></i> Guardar</button>
+</div>

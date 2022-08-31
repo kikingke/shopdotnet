@@ -1,0 +1,30 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.anchoForm {
+    width: 60%;
+    margin: 0 auto;
+}
+
+@media(max-width:768px) {
+    .anchoForm {
+        width: 100%;
+        margin: 0 auto;
+    }
+}

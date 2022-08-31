@@ -1,0 +1,27 @@
+﻿@model shopdotnet.Data.Entities.Category
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2><a asp-action="Index" class="btn btn-outline-default"><i class="fa-solid fa-arrow-left"></i> Atras</a> | Editando la Categoria: @Model.Category_Name</h2>
+
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="card" style="width: 60%;margin:0 auto;">
+            <div class="card-body">
+                <div class="col-md-12">
+                    <form asp-action="Edit">
+                        <input type="hidden" asp-for="Category_ID" />
+                        <partial name="_Form" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

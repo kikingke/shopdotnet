@@ -1,0 +1,27 @@
+﻿@model shopdotnet.Data.Entities.Category
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2><a asp-action="Index" class="btn btn-outline-default"><i class="fa-solid fa-arrow-left"></i> Atras</a> | Creando Nueva Categoria</h2>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="card anchoForm">
+            <div class="card-body">
+                <div class="col-md-12">
+                    <form asp-action="Create">
+                        <partial name="_Form" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

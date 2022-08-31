@@ -1,0 +1,28 @@
+﻿@model shopdotnet.Models.StateViewModel
+
+
+@{
+    ViewData["Title"] = "Departamento";
+}
+
+<h3><a asp-action="Details" asp-route-id="@Model.CountryId" class="btn btn-outline-default"><i class="fa-solid fa-arrow-left"></i> Atras</a> | Creando Nuevo Departamento para el País: </h3>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="card anchoForm">
+            <div class="card-body">
+                <div class="col-md-12">
+                    <form asp-action="AddState">
+                        <partial name="_FormState" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

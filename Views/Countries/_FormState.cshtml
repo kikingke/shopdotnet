@@ -1,0 +1,17 @@
+﻿@model shopdotnet.Models.StateViewModel
+
+<div asp-validation-summary="ModelOnly" class="alert alert-danger alert-dismissible fade show"></div>
+
+<input type="hidden" asp-for="State_ID" />
+<input type="hidden" asp-for="CountryId" />
+<!--<input type="hidden" asp-for="CountryName" />-->
+
+<div class="form-group mt-4">
+    <label asp-for="State_Name" class="control-label">Departamento:</label>
+    <input asp-for="State_Name" class="form-control" />
+    <span asp-validation-for="State_Name" class="text-danger"></span>
+</div>
+<div class="form-group mt-4 d-flex justify-content-between">
+    <a asp-action="Details" asp-route-id="@Model.CountryId" class="btn btn-outline-default"><i class="fa-solid fa-ban"></i> Cancelar</a>
+    <button type="submit" value="Save" class="btn btn-success"><i class="fa-regular fa-floppy-disk"></i> Guardar</button>
+</div>

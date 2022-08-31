@@ -1,0 +1,23 @@
+﻿@model shopdotnet.Data.Entities.State
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<a asp-action="DetailsState" asp-route-id="@Model.Country.Country_ID" class="btn btn-outline-default"><i class="fa-solid fa-arrow-left"></i> Atras</a> |
+
+<div class="container">
+    <hr />
+    <div class="card" style="width: 60%;margin:0 auto;">
+        <div class="card-body">
+            <h2 class="text-center">Confirme eliminar el Departamento: <span class="text-danger">@Model.State_Name</span> ?</h2>
+            <form asp-action="DeleteState">
+                <div class="form-group mt-4 d-flex justify-content-between">
+                    <input type="hidden" asp-for="State_ID" />
+                    <a asp-action="DetailsState"  asp-route-id="@Model.Country.Country_ID" class="btn btn-outline-default"><i class="fa-solid fa-ban"></i> Cancelar</a>
+                    <button type="submit" value="Borrar" class="btn btn-danger"><i class="fa-solid fa-delete-left"></i> Eliminar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

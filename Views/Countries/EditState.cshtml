@@ -1,0 +1,26 @@
+﻿@model shopdotnet.Models.StateViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h3><a asp-action="Details" asp-route-id="@Model.CountryId" class="btn btn-outline-default"><i class="fa-solid fa-arrow-left"></i> Atras</a> | Editando el Departamento: @Model.State_Name</h3>
+
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="card" style="width: 60%;margin:0 auto;">
+            <div class="card-body">
+                <div class="col-md-12">
+                    <form asp-action="EditState">
+                        <partial name="_FormState" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

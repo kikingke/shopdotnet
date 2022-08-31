@@ -1,0 +1,26 @@
+﻿@model shopdotnet.Models.CityViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h3><a asp-action="DetailsState" asp-route-id="@Model.StateId" class="btn btn-outline-default"><i class="fa-solid fa-arrow-left"></i> Atras</a> | Editando el Municipio: @Model.City_Name</h3>
+
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="card" style="width: 60%;margin:0 auto;">
+            <div class="card-body">
+                <div class="col-md-12">
+                    <form asp-action="EditCity">
+                        <partial name="_FormCity" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

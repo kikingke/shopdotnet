@@ -1,0 +1,27 @@
+﻿@model shopdotnet.Models.CityViewModel
+
+@{
+    ViewData["Title"] = "Municipio";
+}
+
+<h3><a asp-action="DetailsState" asp-route-id="@Model.StateId" class="btn btn-outline-default"><i class="fa-solid fa-arrow-left"></i> Atras</a> | Creando Nuevo Municipio para el Departamento: @Model.StateName</h3>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="card anchoForm">
+            <div class="card-body">
+                <div class="col-md-12">
+                    <form asp-action="AddCity">
+                        <partial name="_FormCity" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
