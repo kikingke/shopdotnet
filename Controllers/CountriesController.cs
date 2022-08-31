@@ -21,12 +21,16 @@ namespace shopdotnet.Controllers
         #region Countries
 
         // GET: Countries
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string message)
         {
+
               IActionResult response = _context.Countries != null ? 
                           View(await _context.Countries
                           .Include(c=>c.States).ToListAsync()) :
                           Problem("Entity set 'DataContext.Countries'  is null.");
+
+
+
             return response;
         }
 
@@ -68,7 +72,8 @@ namespace shopdotnet.Controllers
                 {
                     _context.Add(country);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
+                    TempData["successCountry"] = "Pais "+country.Country_Name+" creado!!";
+                    return RedirectToAction("Index");
                 }
                 catch (DbUpdateException dbUpdateException)
                 {
@@ -119,6 +124,7 @@ namespace shopdotnet.Controllers
                 {
                     _context.Update(country);
                     await _context.SaveChangesAsync();
+                    TempData["successCountry"] = "País " + country.Country_Name + " Editado!!";
                     return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateException dbUpdateException)
@@ -177,6 +183,7 @@ namespace shopdotnet.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+                TempData["successCountry"] = "País " + country.Country_Name + " Eliminado!!";
             }
             catch (Exception)
             {
